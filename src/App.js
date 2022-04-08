@@ -11,9 +11,9 @@ function App() {
   const [{ cart, total }, dispatch] = useStateValue();
   const [totalPrice, setTotalPrice] = useState(0);
 
-  
-
-
+  const closemenu= () =>{
+    document.querySelector(".rightMenu").classList.remove("active");
+  }
 
   return (
     <div className="App">
@@ -45,6 +45,7 @@ function App() {
 
         </div>
         <div className='rightMenu'>
+        <button className="back" onClick={closemenu}>Back To Home</button>
         {!cart ? (
             <div className="addSomeItem">
               <img
@@ -79,6 +80,9 @@ function App() {
                 </p>
               </div>
               <button className="checkOut">Check Out</button>
+              <button className="back" onClick={closemenu}>Back To Home</button>
+
+
             </div>
           )}
         </div>
